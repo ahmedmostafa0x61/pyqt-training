@@ -7,7 +7,10 @@ import MySQLdb
 
 main_ui, _ = loadUiType('login.ui')
 
-
+HOST = ''
+USER = ''
+PASSWORD = ''
+DATABASE = ''
 class MainApp(QMainWindow, main_ui):
     def __init__(self):
         super(MainApp, self).__init__()
@@ -21,7 +24,7 @@ class MainApp(QMainWindow, main_ui):
 
     def new_user(self):
         # Database connections
-        self.db = MySQLdb.connect(host='localhost', user='root', password='159753852456', db='simple')
+        self.db = MySQLdb.connect(host='HOST', user='USER', password='PASSWORD', db='DATABASE')
         self.cur = self.db.cursor()
         # Getting info from UI
         username = self.lineEdit.text()
